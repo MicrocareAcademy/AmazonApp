@@ -15,15 +15,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Account\Controllers\" />
     <Folder Include="Areas\Account\Data\" />
     <Folder Include="Areas\Account\Models\" />
-    <Folder Include="Areas\Account\Views\" />
-    <Folder Include="Areas\Billing\Controllers\" />
     <Folder Include="Areas\Billing\Data\" />
     <Folder Include="Areas\Billing\Models\" />
     <Folder Include="Areas\Billing\Views\" />
-    <Folder Include="Areas\Inventory\Controllers\" />
     <Folder Include="Areas\Inventory\Data\" />
     <Folder Include="Areas\Inventory\Models\" />
     <Folder Include="Areas\Inventory\Views\" />
