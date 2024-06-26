@@ -22,7 +22,6 @@
     <Folder Include="Areas\Billing\Views\" />
     <Folder Include="Areas\Inventory\Data\" />
     <Folder Include="Areas\Inventory\Models\" />
-    <Folder Include="Areas\Inventory\Views\" />
   </ItemGroup>
 
 </Project>

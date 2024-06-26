@@ -2,11 +2,12 @@
 
 namespace AmazonApp.Areas.Inventory.Controllers
 {
+    [Area("Inventory")]
     public class CategoryController : Controller
     {
-        public IActionResult Index()
+        public IActionResult GetCategories()
         {
-            return View();
+            return View("CategoriesList");
         }
     }
 }
