@@ -7,10 +7,6 @@ namespace AmazonApp.Areas.Inventory.Controllers
     {
         public IActionResult GetProducts()
         {
-            var model = new dummymodle();
-
-            model.description = 
-
             return View("ProductList");
         }
     }
