@@ -20,6 +20,11 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+app.MapControllerRoute(
+ name: "default",
+ pattern: "{controller=Login}/{action=Logon}/{id?}"
+);
+
 app.MapRazorPages();
 
 app.Run();
