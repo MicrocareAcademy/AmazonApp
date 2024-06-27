@@ -1,0 +1,1 @@
+﻿Scaffold-DbContext -Connection "Data Source=(local);Initial Catalog=AmazonDB;Trusted_Connection=True;TrustServerCertificate=True;" -Provider Microsoft.EntityFrameworkCore.SqlServer -OutputDir Entities -context AmazonDBContext -force
