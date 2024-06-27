@@ -6,51 +6,19 @@
 
 <h4>ProductList</h4>
 
-
-   <!---<table> 
-       <thead> --------------------------------------for a trail view
-        <tr>
-            <th scope="col">SL.No</th>
-            <th scope="col">Products</th>
-            <th scope="col">View</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Dell</td>
-            <td> <button type="button" class="btn btn-primary">View</button> </td>
-            <td> <button type="button" class="btn btn-warning">Add to Cart</button> </td>
-        </tr>
-
-        <tr>
-            <th scope="row">2</th>
-            <td>HP</td>
-            <td> <button type="button" class="btn btn-primary">View</button> </td>
-            <td> <button type="button" class="btn btn-warning">Add to Cart</button> </td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Lenovo</td>
-            <td> <button type="button" class="btn btn-primary">View</button> </td>
-            <td> <button type="button" class="btn btn-warning">Add to Cart</button> </td>
-        </tr>
-    </tbody>
-    </table>-->
-
-
     <div class="page">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
-                    <img class="card-img-top" src="~/lib/image/dell.jpeg" alt="Dell Image">
+                    <img class="card-img-top" style="width:100%; height:200px" src="~/lib/image/dell.jpeg" alt="Dell Image">
                         <div class="card-body">
                             <h1 class="card-title">Dell</h1>
                             <p class="card-text">This section/part will be used for the product details.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a href="#" class="btn btn-primary">View</a>
+                                <a class="btn btn-primary"
+                                   href="@Url.Action("GetDell","Product",new{area="Inventory"})">View</a>
                                     <a href="#" class="btn btn-warning">Add to Cart</a>
                                     <a href="#" class="btn btn-danger">Order Now</a>
                                 </div>
@@ -60,13 +28,14 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
-                    <img class="card-img-top" src="~/lib/image/hp.jpeg" alt="HP Image">
+                    <img class="card-img-top" style="width:100%; height:200px" src="~/lib/image/hp.jpeg" alt="HP Image">
                         <div class="card-body">
                         <h1 class="card-title">HP</h1>
                             <p class="card-text">This section/part will be used for the product details</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a href="#" class="btn btn-primary">View</a>
+                                <a class="btn btn-primary"
+                                   href="@Url.Action("GetHP","Product")">View</a>
                                     <a href="#" class="btn btn-warning">Add to Cart</a>
                                     <a href="#" class="btn btn-danger">Order Now</a>
                                 </div>
@@ -76,13 +45,14 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
-                    <img class="card-img-top" src="~/lib/image/lenovo.jpeg" alt="Lenovo Image">
+                    <img class="card-img-top" style="width:100%; height:200px" src="~/lib/image/lenovo.jpeg" alt="Lenovo Image">
                         <div class="card-body">
                         <h1 class="card-title">Lenovo</h1>
                             <p class="card-text">This section/part will be used for the product details</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a href="#" class="btn btn-primary">View</a>
+                                <a class="btn btn-primary"
+                                   href="@Url.Action("GetLenovo","Product",new{area="Inventory"})">View</a>
                                     <a href="#" class="btn btn-warning">Add to Cart</a>
                                     <a href="#" class="btn btn-danger">Order Now</a>
                                 </div>
@@ -90,7 +60,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                @* <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
                     <img class="card-img-top" src="~/lib/image/mac.jpeg" alt="Mac Image">
                         <div class="card-body">
@@ -98,15 +68,16 @@
                             <p class="card-text">This section/part will be used for the product details</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a href="#" class="btn btn-primary">View</a>
+                                <a class="btn btn-primary"
+                                   href="@Url.Action("ViewProducts","ProductView",new{area="Inventory"})">View</a>
                                     <a href="#" class="btn btn-warning">Add to Cart</a>
                                     <a href="#" class="btn btn-danger">Order Now</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
+                </div> *@
+                @* <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
                     <img class="card-img-top" src="~/lib/image/xaomi.jpeg" alt="Xaomi Image">
                         <div class="card-body">
@@ -114,7 +85,8 @@
                             <p class="card-text">This section/part will be used for the product details</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a href="#" class="btn btn-primary">View</a>
+                                <a class="btn btn-primary"
+                                   href="@Url.Action("ViewProducts","ProductView",new{area="Inventory"})>View</a>
                                     <a href="#" class="btn btn-warning">Add to Cart</a>
                                     <a href="#" class="btn btn-danger">Order Now</a>
                                 </div>
@@ -130,14 +102,15 @@
                             <p class="card-text">This section/part will be used for the product details</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a href="#" class="btn btn-primary">View</a>
+                                <a class="btn btn-primary"
+                                   href="@Url.Action("ViewProducts","ProductView",new{area="Inventory"})>View</a>
                                     <a href="#" class="btn btn-warning">Add to Cart</a>
                                     <a href="#" class="btn btn-danger">Order Now</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div> 
+                </div>  *@
             </div>
         </div>
     </div>

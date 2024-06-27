@@ -9,5 +9,20 @@ namespace AmazonApp.Areas.Inventory.Controllers
         {
             return View("ProductList");
         }
+
+        public IActionResult GetDell()
+        {
+            return View("ViewDell");
+        }
+
+        public IActionResult GetHP()
+        {
+            return View("ViewHP");
+        }
+
+        public IActionResult GetLenovo()
+        {
+            return View("ViewLenovo");
+        }
     }
 }
