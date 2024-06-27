@@ -1,8 +1,31 @@
-﻿
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model AmazonApp.Areas.Account.Models.LoginModel
+
 @{
-    ViewData["Title"] = "Login";
-    Layout = "~/Pages/Shared/_Layout.cshtml";
+    Layout = "_LoginLayout";
 }
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6">
+            <h1>Log-in</h1>
+            <div asp-validation-summary="ModelOnly" class="errorMsg"></div>
 
-<h1>Login</h1>
-
+            <form asp-action="SubmitLogin" asp-controller="Logon" method="post">
+                <div class="form-group">
+                    <label asp-for="@Model.Username"></label>
+                    <input asp-for="@Model.Username" class="form-control" />
+                    <span asp-validation-for="@Model.Username" class="errorMsg"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.Password"></label>
+                    <input asp-for="@Model.Password" class="form-control" />
+                    <span asp-validation-for="@Model.Password" class="errorMsg"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a href="@Url.Action("RegisterForm","Logon")">Register</a>"
+            </form>
+        </div>
+        <div class="col-6">
+        </div>
+    </div>
+</div>
