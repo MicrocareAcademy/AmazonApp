@@ -11,7 +11,7 @@
         <tr>
             <th scope="col">SL.No</th>
             <th scope="col">Category</th>
-            <th scope="col">View</th>
+            <th scope="col">Details</th>
         </tr>
     </thead>
     <tbody>
@@ -47,6 +47,15 @@
             <td>
                 <a class="btn btn-primary"
                    href="@Url.Action("GetMobileList","Category",new{area="Inventory"})">View</a>
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row">5</th>
+            <td>Home Appliances</td>
+            <td>
+                <a class="btn btn-primary"
+                   href="@Url.Action("GetHomeAppliances","Category",new{area="Inventory"})">View</a>
             </td>
         </tr>
         
