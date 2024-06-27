@@ -35,6 +35,8 @@
     <Folder Include="Areas\Inventory\Models\" />
     <Folder Include="Entities\" />
     <Folder Include="Views\" />
+    <Folder Include="Areas\Inventory\Views\ProductView\" />
+    <Folder Include="Areas\Inventory\Views\CategoryList\" />
   </ItemGroup>
 
 </Project>

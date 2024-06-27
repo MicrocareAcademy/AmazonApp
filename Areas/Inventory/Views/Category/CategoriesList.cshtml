@@ -4,5 +4,61 @@
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 
-<h1>CategoriesList</h1>
+<h1>Category List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">SL.No</th>
+            <th scope="col">Category</th>
+            <th scope="col">Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Electronics</td>
+            <td>
+                <a class="btn btn-primary"
+                   href="@Url.Action("GetElectronicsList","Category",new{area="Inventory"})">View</a>
+            </td>
+        </tr>
+        
+        <tr>
+            <th scope="row">2</th>
+            <td>Clothing</td>
+            <td>
+                <a class="btn btn-primary"
+                   href="@Url.Action("GetClothingList","Category",new{area="Inventory"})">View</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Furniture</td>
+            <td>
+                <a class="btn btn-primary"
+                   href="@Url.Action("GetFurnitureList","Category",new{area="Inventory"})">View</a>
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row">4</th>
+            <td>Mobiles</td>
+            <td>
+                <a class="btn btn-primary"
+                   href="@Url.Action("GetMobileList","Category",new{area="Inventory"})">View</a>
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row">5</th>
+            <td>Home Appliances</td>
+            <td>
+                <a class="btn btn-primary"
+                   href="@Url.Action("GetHomeAppliances","Category",new{area="Inventory"})">View</a>
+            </td>
+        </tr>
+        
+    </tbody>
+</table>
 

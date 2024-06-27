@@ -5,9 +5,39 @@ namespace AmazonApp.Areas.Inventory.Controllers
     [Area("Inventory")]
     public class ProductController : Controller
     {
-        public IActionResult Index()
+        public IActionResult GetProducts()
         {
-            return View();
+            return View("ProductList");
+        }
+
+        public IActionResult GetDell()
+        {
+            return View("ViewDell");
+        }
+
+        public IActionResult GetHP()
+        {
+            return View("ViewHP");
+        }
+
+        public IActionResult GetLenovo()
+        {
+            return View("ViewLenovo");
+        }
+
+        public IActionResult GetMac()
+        {
+            return View("ViewMac");
+        }
+
+        public IActionResult GetXaomi()
+        {
+            return View("ViewXaomi");
+        }
+
+        public IActionResult GetAsus()
+        {
+            return View("ViewAsus");
         }
     }
 }
