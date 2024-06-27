@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewData["Title"] = "ViewMobileList";
+
+
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Mobiles</h1>
+
+<div class="page">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img class="card-img-top" style="width:100%;height:300px" src="https://i0.wp.com/sixcolors.com/wp-content/uploads/2023/10/iphone-15-6c.jpg?ssl=1" alt="Dell Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Apple</h5>
+                        <p class="card-text"> IPhone-15, IPhone-15 Pro,IPhone-15 Pro Max.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a class="btn btn-primary" href="@Url.Action("GetCategories","Category",new{area="Inventory"})">Back</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img class="card-img-top" style="width:100%;height:300px" src="https://tse2.mm.bing.net/th?id=OIF.gWHBsurUzbodFeX8xDaeKA&pid=Api&P=0&h=220" alt="HP Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Samsung</h5>
+                        <p class="card-text"> samsung s24 ultra, galaxy z flip 5, Galaxy A51, Galaxy M40</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a class="btn btn-primary" href="@Url.Action("GetCategories","Category",new{area="Inventory"})">Back</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img class="card-img-top" style="width:100%;height:300px" src="https://specifications-pro.com/wp-content/uploads/2020/10/OnePlus-9-Pro-2.jpg" alt="Lenovo Image">
+                    <div class="card-body">
+                        <h6 class="card-title">One Plus</h6>
+                        <p class="card-text"> oneplus-nord-ce4-lite-5g, OnePlus 12, oneplus-nord-ce4-5g</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a class="btn btn-primary" href="@Url.Action("GetCategories","Category",new{area="Inventory"})">Back</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

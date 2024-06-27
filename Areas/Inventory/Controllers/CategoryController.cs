@@ -24,5 +24,10 @@ namespace AmazonApp.Areas.Inventory.Controllers
         {
             return View("ViewFurnitureList");
         }
+
+        public IActionResult GetMobileList()
+        {
+            return View("ViewMobileList");
+        }
     }
 }
