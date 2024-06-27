@@ -18,18 +18,28 @@
         <tr>
             <th scope="row">1</th>
             <td>Electronics</td>
-            <td> <button type="button" class="btn btn-primary">View</button> </td>
+            <td>
+                <a class="btn btn-primary"
+                   href="@Url.Action("GetElectronicsList","Category",new{area="Inventory"})">View</a>
+            </td>
         </tr>
         
         <tr>
             <th scope="row">3</th>
             <td>Clothing</td>
-            <td> <button type="button" class="btn btn-primary">View</button> </td>
+            <td>
+                <a class="btn btn-primary"
+                   href="@Url.Action("GetClothingList","Category",new{area="Inventory"})">View</a>
+            </td>
         </tr>
         <tr>
             <th scope="row">3</th>
             <td>Furniture</td>
-            <td> <button type="button" class="btn btn-primary">View</button> </td>
+            <td>
+                <a class="btn btn-primary"
+                   href="@Url.Action("GetFurnitureList","Category",new{area="Inventory"})">View</a>
+            </td>
         </tr>
     </tbody>
 </table>
+
