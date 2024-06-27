@@ -6,39 +6,6 @@
 
 <h4>ProductList</h4>
 
-
-   <!---<table> 
-       <thead> --------------------------------------for a trail view
-        <tr>
-            <th scope="col">SL.No</th>
-            <th scope="col">Products</th>
-            <th scope="col">View</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Dell</td>
-            <td> <button type="button" class="btn btn-primary">View</button> </td>
-            <td> <button type="button" class="btn btn-warning">Add to Cart</button> </td>
-        </tr>
-
-        <tr>
-            <th scope="row">2</th>
-            <td>HP</td>
-            <td> <button type="button" class="btn btn-primary">View</button> </td>
-            <td> <button type="button" class="btn btn-warning">Add to Cart</button> </td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Lenovo</td>
-            <td> <button type="button" class="btn btn-primary">View</button> </td>
-            <td> <button type="button" class="btn btn-warning">Add to Cart</button> </td>
-        </tr>
-    </tbody>
-    </table>-->
-
-
     <div class="page">
         <div class="container">
             <div class="row">
@@ -50,7 +17,8 @@
                             <p class="card-text">This section/part will be used for the product details.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a href="#" class="btn btn-primary">View</a>
+                                <a class="btn btn-primary"
+                                   href="@Url.Action("GetDell","Product",new{area="Inventory"})">View</a>
                                     <a href="#" class="btn btn-warning">Add to Cart</a>
                                     <a href="#" class="btn btn-danger">Order Now</a>
                                 </div>
@@ -66,7 +34,8 @@
                             <p class="card-text">This section/part will be used for the product details</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a href="#" class="btn btn-primary">View</a>
+                                <a class="btn btn-primary"
+                                   href="@Url.Action("GetHP","Product")">View</a>
                                     <a href="#" class="btn btn-warning">Add to Cart</a>
                                     <a href="#" class="btn btn-danger">Order Now</a>
                                 </div>
@@ -82,7 +51,8 @@
                             <p class="card-text">This section/part will be used for the product details</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a href="#" class="btn btn-primary">View</a>
+                                <a class="btn btn-primary"
+                                   href="@Url.Action("GetLenovo","Product",new{area="Inventory"})">View</a>
                                     <a href="#" class="btn btn-warning">Add to Cart</a>
                                     <a href="#" class="btn btn-danger">Order Now</a>
                                 </div>
@@ -98,7 +68,8 @@
                             <p class="card-text">This section/part will be used for the product details</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a href="#" class="btn btn-primary">View</a>
+                                <a class="btn btn-primary"
+                                   href="@Url.Action("ViewProducts","ProductView",new{area="Inventory"})">View</a>
                                     <a href="#" class="btn btn-warning">Add to Cart</a>
                                     <a href="#" class="btn btn-danger">Order Now</a>
                                 </div>
@@ -114,7 +85,8 @@
                             <p class="card-text">This section/part will be used for the product details</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a href="#" class="btn btn-primary">View</a>
+                                <a class="btn btn-primary"
+                                   href="@Url.Action("ViewProducts","ProductView",new{area="Inventory"})>View</a>
                                     <a href="#" class="btn btn-warning">Add to Cart</a>
                                     <a href="#" class="btn btn-danger">Order Now</a>
                                 </div>
@@ -130,7 +102,8 @@
                             <p class="card-text">This section/part will be used for the product details</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a href="#" class="btn btn-primary">View</a>
+                                <a class="btn btn-primary"
+                                   href="@Url.Action("ViewProducts","ProductView",new{area="Inventory"})>View</a>
                                     <a href="#" class="btn btn-warning">Add to Cart</a>
                                     <a href="#" class="btn btn-danger">Order Now</a>
                                 </div>
