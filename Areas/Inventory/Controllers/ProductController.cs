@@ -24,5 +24,20 @@ namespace AmazonApp.Areas.Inventory.Controllers
         {
             return View("ViewLenovo");
         }
+
+        public IActionResult GetMac()
+        {
+            return View("ViewMac");
+        }
+
+        public IActionResult GetXaomi()
+        {
+            return View("ViewXaomi");
+        }
+
+        public IActionResult GetAsus()
+        {
+            return View("ViewAsus");
+        }
     }
 }
