@@ -1,4 +1,42 @@
-﻿@{
+﻿@using AmazonApp.Areas.Account.Models
+@using AmazonApp.Entities
+@model IList<UserModel>
+@{
     Layout = "_Layout";
 }
+
 <h1>Welcome To Amazon Shopping</h1>
+
+
+@if (Model != null && Model.Count > 0)
+{
+    <h1>Users List </h1>
+
+    <div class="row">
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>UserName</th>
+                    <th>Password</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr id="user.UserId">
+                        <td>@user.UserName</td>
+                        <td>@user.Password</td>
+                        <td>@user.Email</td>
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h2>No Users Data ..</h2>
+}
