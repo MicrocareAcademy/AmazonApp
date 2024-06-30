@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewData["Title"] = "AddCategory";
+
+    @model AmazonApp.Areas.Inventory.Models.AddCategoryModel
+
+
+
+{
+    Layout = "_Layout";
+}
+
+<form method="post" action="/Category/SaveCategory">
+    <div class="form-group">
+        <label for="CategoryName">Category Name</label>
+        <input type="text" class="form-control"
+               id="CategoryName" name="CategoryName" placeholder="Enter Category Name">
+    </div>
+    <div class="form-group">
+        <label for="CategoryDescription">CategoryDescription</label>
+        <input type="text" class="form-control"
+               id="CategoryDescription" name="CategoryDescription" placeholder="Enter CategoryDescription">
+    </div>
+
+    <div class="form-group">
+        <label for="Gender">CategoryStatus</label>
+        <input type="text" class="form-control"
+               id="CategoryStatus" name="CategoryStatus" placeholder="Enter CategoryStatus">
+    </div>
+   
+   
+    <button type="submit" class="btn btn-primary">Save Category</button>
+</form>
+
+}
+
+<h1>AddCategory</h1>
+
