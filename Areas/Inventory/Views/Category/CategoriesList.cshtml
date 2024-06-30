@@ -1,64 +1,73 @@
-﻿
+﻿@using AmazonApp.Areas
+@using AmazonApp.Areas.Account.Models
+@using AmazonApp.Entities
+@model IList<Category>
+@using AmazonApp.Areas.Inventory.Controllers
+
+
 @{
     ViewData["Title"] = "CategoriesList";
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 
-<h1>Category List</h1>
+@if (Model != null && Model.Count > 0)
+{
+    <h1>Categories List  <a href="@Url.Action("AddCategory","Category")" class="btn btn-primary">Add Category</a></h1>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">SL.No</th>
-            <th scope="col">Category</th>
-            <th scope="col">Details</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Electronics</td>
-            <td>
-                <a class="btn btn-primary"
-                   href="@Url.Action("GetElectronicsList","Category",new{area="Inventory"})">View</a>
-            </td>
-        </tr>
-        
-        <tr>
-            <th scope="row">2</th>
-            <td>Clothing</td>
-            <td>
-                <a class="btn btn-primary"
-                   href="@Url.Action("GetClothingList","Category",new{area="Inventory"})">View</a>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Furniture</td>
-            <td>
-                <a class="btn btn-primary"
-                   href="@Url.Action("GetFurnitureList","Category",new{area="Inventory"})">View</a>
-            </td>
-        </tr>
+    <div class="row">
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>CategoryName </th>
+                    <th>CategoryDescription</th>
+                    <th>CategoryStatus</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var category in Model)
+                {
+                    <tr id="category.CategoryID">
+                        <td>@category.CategoryName</td>
+                        <td>@category.CategoryDescription</td>
+                        <td>@category.CategoryStatus</td>
+                        <td>
+                            <a href="@Url.Action("EditCategory","Category",new{CategoryID = category.CategoryId})">Edit</a>
+                            |
+                            <a href="javascript:0;" onclick="DeletePatient(@category.CategoryId)">Delete</a>
 
-        <tr>
-            <th scope="row">4</th>
-            <td>Mobiles</td>
-            <td>
-                <a class="btn btn-primary"
-                   href="@Url.Action("GetMobileList","Category",new{area="Inventory"})">View</a>
-            </td>
-        </tr>
+                        </td>
+                    </tr>
+                }
 
-        <tr>
-            <th scope="row">5</th>
-            <td>Home Appliances</td>
-            <td>
-                <a class="btn btn-primary"
-                   href="@Url.Action("GetHomeAppliances","Category",new{area="Inventory"})">View</a>
-            </td>
-        </tr>
-        
-    </tbody>
-</table>
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h2>No Categories Data ..</h2>
+}
+
+<script type="text/javascript">
+
+    function DeleteCategory(CategoryId) {
+
+        var url = "https://localhost:7214/Category/DeleteCategory";
+        var parameters = { CategoryId: CategoryId };
+
+        $.post(url, parameters, function (data) {
+
+            alert("Category with Id:" + CategoryId + " was deleted");
+
+            $("tr#" + CategoryId).remove();
+
+        });
+
+    }
+
+
+</script>
+
+
 

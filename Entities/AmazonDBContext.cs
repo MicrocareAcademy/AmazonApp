@@ -15,32 +15,48 @@ public partial class AmazonDBContext : DbContext
     {
     }
 
+    public virtual DbSet<Category> Categories { get; set; }
+
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Data Source=DESKTOP-FP28SOE;Initial Catalog=AmazonDB;Trusted_Connection=True;TrustServerCertificate=True;");
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseSqlServer("Data Source=(local);Initial Catalog=AmazonDB;Trusted_Connection=True;TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<User>(entity =>
+        modelBuilder.Entity<Category>(entity =>
         {
-            entity.HasKey(e => e.UserId).HasName("PK__User__1788CC4C45DA349A");
+            entity.HasKey(e => e.CategoryId).HasName("PK__category__19093A2BBE70C3D7");
 
-            entity.ToTable("User");
+            entity.ToTable("category");
 
-            entity.HasIndex(e => e.Email, "UQ__User__A9D105346E0037C2").IsUnique();
-
-            entity.HasIndex(e => e.UserName, "UQ__User__C9F284564CF83D45").IsUnique();
-
-            entity.Property(e => e.Email)
-                .HasMaxLength(100)
-                .IsUnicode(false);
-            entity.Property(e => e.Password)
+            entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
+            entity.Property(e => e.CategoryDescription).HasColumnType("text");
+            entity.Property(e => e.CategoryName)
                 .HasMaxLength(255)
                 .IsUnicode(false);
-            entity.Property(e => e.UserName)
+            entity.Property(e => e.CategoryStatus)
                 .HasMaxLength(50)
                 .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<User>(entity =>
+        {
+            entity.HasKey(e => e.UserId).HasName("PK__Users__B9BE370FC1EA914A");
+
+            entity.HasIndex(e => e.UserName, "UQ__Users__7C9273C49EF6B8B3").IsUnique();
+
+            entity.Property(e => e.UserId).HasColumnName("user_id");
+            entity.Property(e => e.EmailId)
+                .HasMaxLength(100)
+                .HasColumnName("email_id");
+            entity.Property(e => e.Password)
+                .HasMaxLength(100)
+                .HasColumnName("password");
+            entity.Property(e => e.UserName)
+                .HasMaxLength(100)
+                .HasColumnName("user_name");
         });
 
         OnModelCreatingPartial(modelBuilder);

@@ -40,7 +40,7 @@ namespace AmazonApp.Areas.Account.Controllers
             User NewUser = new User();
             NewUser.UserName = registerModel.Username;
             NewUser.Password = registerModel.Password;
-            NewUser.Email = registerModel.Email;
+            NewUser.EmailId = registerModel.Email;
 
             dbcontext.Users.Add(NewUser);
             dbcontext.SaveChanges();

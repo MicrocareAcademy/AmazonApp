@@ -1,38 +1,88 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using AmazonApp.Entities;
+
+using Microsoft.EntityFrameworkCore;
+using AmazonApp.Areas.Inventory.Models;
+
+
 
 namespace AmazonApp.Areas.Inventory.Controllers
 {
     [Area("Inventory")]
     public class CategoryController : Controller
     {
-        public IActionResult GetCategories()
+        AmazonDBContext dBContext = new AmazonDBContext();
+
+        public IActionResult CategoriesList()
         {
+            var categories = dBContext.Categories.ToList();
+
             return View("CategoriesList");
         }
 
-        public IActionResult GetElectronicsList()
+        public IActionResult AddCategory(AddCategoryModel model)
         {
-            return View("ViewElectronicsList");
+            var category = new Category();
+
+            category.CategoryId = model.CategoryId;
+            category.CategoryName = model.CategoryName;
+            category.CategoryDescription = model.CategoryDescription;
+            category.CategoryStatus = model.CategoryStatus;
+
+
+            dBContext.Categories.Add(category);
+
+            return View(model);
+        }
+        [HttpPost]
+        public IActionResult SaveCategory(AddCategoryModel model)
+        {
+            var category = new Category();
+            category.CategoryId = model.CategoryId;
+            category.CategoryName = model.CategoryName;
+            category.CategoryDescription = model.CategoryDescription;
+            category.CategoryStatus = model.CategoryStatus;
+            
+
+            dBContext.Categories.Add(category);
+            dBContext.SaveChanges();
+            return RedirectToAction("CategoriesList");
         }
 
-        public IActionResult GetClothingList()
+        public IActionResult EditCategory(int CategoryId)
         {
-            return View("ViewClothingList");
+            var categoryObj = dBContext.Categories.FirstOrDefault(p => p.CategoryId == CategoryId);
+
+            var model = new AddCategoryModel();
+            model.CategoryId = categoryObj.CategoryId;
+            model.CategoryName = categoryObj.CategoryName;
+            model.CategoryDescription = categoryObj.CategoryDescription;
+            model.CategoryStatus = categoryObj.CategoryStatus;
+          
+            return View(model);
         }
 
-        public IActionResult GetFurnitureList()
+        [HttpPost]
+        public IActionResult UpdateCategory(AddCategoryModel model)
         {
-            return View("ViewFurnitureList");
+            var categoryObj = dBContext.Categories.Where(p => p.CategoryId == model.CategoryId).FirstOrDefault();
+            categoryObj.CategoryName = model.CategoryName;
+            categoryObj.CategoryDescription = model.CategoryDescription;
+            categoryObj.CategoryStatus = model.CategoryStatus;
+
+            dBContext.SaveChanges();
+            return RedirectToAction("CategoriesList");
+
         }
 
-        public IActionResult GetMobileList()
+        [HttpPost]
+        public IActionResult DeleteCategory(int CategoryId)
         {
-            return View("ViewMobileList");
-        }
-
-        public IActionResult GetHomeAppliances()
-        {
-            return View("ViewHomeAppliances");
+            var categoryObj = dBContext.Categories.Where(p => p.CategoryId == CategoryId  ).FirstOrDefault();
+            dBContext.Categories.Remove(categoryObj);
+            dBContext.SaveChanges();
+            return Json(true);
         }
     }
 }
+
