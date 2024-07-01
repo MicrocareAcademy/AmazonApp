@@ -17,7 +17,7 @@ namespace AmazonApp.Areas.Inventory.Controllers
         {
             var categories = dBContext.Categories.ToList();
 
-            return View("CategoriesList");
+            return View(categories);
         }
 
         public IActionResult AddCategory(AddCategoryModel model)
