@@ -1,0 +1,66 @@
+﻿@using AmazonApp.Entities
+@model IList<Product>
+
+@{
+    Layout = "_Layout";
+}
+
+
+@if (Model != null && Model.Count > 0)
+{
+    <h1>Products List <a href="@Url.Action("AddProduct","Product")" class="btn btn-primary">Add Product</a></h1>
+
+    <div class="row">
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Price </th>
+                    <th>Product Category</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var product in Model)
+                {
+                    <tr id="product.Id">
+                        <td>@product.Name</td>
+                        <td>@product.Price</td>
+                        <td>@product.Category</td>
+                         <td>
+                            <a href="@Url.Action("EditProduct","Product",new{Id = product.Id })">Edit</a>
+                            |
+                            <a href="javascript:0;" onclick="DeleteProduct(@product.Id)">Delete</a>
+
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <h2>No Products Data ..</h2>
+}
+
+<script type="text/javascript">
+
+    function DeleteProduct(Id) {
+
+        var url = "https://localhost:7214/Inventory/Product/DeleteProduct";
+        var parameters = { Id: Id };
+
+        $.post(url, parameters, function (data) {
+
+            alert("Product with Id:" + Id + " was deleted");
+
+            $("tr#" + Id).remove();
+
+        });
+
+    }
+
+
+</script>
