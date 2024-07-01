@@ -1,5 +1,6 @@
 ﻿@using AmazonApp.Areas
 @using AmazonApp.Areas.Account.Models
+@using AmazonApp.Areas.Inventory.Controllers
 @using AmazonApp.Entities
 @model IList<Category>
 
@@ -33,7 +34,7 @@
                         <td>
                             <a href="@Url.Action("EditCategory","Category",new{CategoryID = category.CategoryId})">Edit</a>
                             |
-                            <a href="javascript:0;" onclick="DeletePatient(@category.CategoryId)">Delete</a>
+                            <a href="javascript:0;" onclick="DeleteCategory(@category.CategoryId)">Delete</a>
 
                         </td>
                     </tr>
@@ -52,7 +53,7 @@ else
 
     function DeleteCategory(CategoryId) {
 
-        var url = "https://localhost:7214/Category/DeleteCategory";
+        var url = "https://localhost:7214/Inventory/Category/DeleteCategory";
         var parameters = { CategoryId: CategoryId };
 
         $.post(url, parameters, function (data) {
@@ -70,3 +71,4 @@ else
 
 
 
+        

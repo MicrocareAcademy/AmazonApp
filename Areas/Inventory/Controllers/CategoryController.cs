@@ -17,8 +17,13 @@
 //        {
 //            var categories = dBContext.Categories.ToList();
 
+<<<<<<< HEAD
 //            return View("CategoriesList");
 //        }
+=======
+            return View(categories);
+        }
+>>>>>>> a5cb2d171e0d3ce18cf3673e24d7bf48d3e639f9
 
 //        public IActionResult AddCategory(AddCategoryModel model)
 //        {
