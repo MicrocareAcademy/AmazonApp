@@ -53,7 +53,7 @@ else
 
     function DeleteCategory(CategoryId) {
 
-        var url = "https://localhost:7214/Category/DeleteCategory";
+        var url = "https://localhost:7214/Inventory/Category/DeleteCategory";
         var parameters = { CategoryId: CategoryId };
 
         $.post(url, parameters, function (data) {
